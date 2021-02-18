@@ -1,0 +1,119 @@
+--Tuplas Servicios
+insert into Servicio values (1,1,'cafeteria',50);
+insert into Servicio values (2,0,'biblioteca',0);
+insert into Servicio values (3,1,'autobus',70);
+insert into Servicio values (4,1,'enfermeria',0);
+insert into Servicio values (5,0,'asesorias',50);
+
+--Tuplas Institucion
+
+insert into Inst values (1, 'IBERO' , 'Universidad Iberoamericana');
+insert into Inst values (2, 'ITAM' , 'Instituto Tecnológico Autónomo de México');
+insert into Inst values (3, 'UP' , 'Universidad Panamericana');
+insert into Inst values (4, 'ITESM' , 'Tecnológico de Monterrey');
+
+--Tuplas Campus
+Insert into Campus values (1, 'Santa fe' , 'Santa Fe, Zedec Sta Fé, Álvaro Obregón, 01219 Ciudad de México' ,  5527191761 ,'CDMX' , 'CDMX', 1)
+Insert into Campus values (2, 'Puebla' , 'lvrd del Niño Poblano 2901, Reserva Territorial Atlixcáyotl, Centro Comercial Puebla' ,  22227191761, 'Puebla' , 'Puebla', 1)
+Insert into Campus values (3, 'Rio Hondo' , 'Río Hondo 1, Altavista, Álvaro Obregón, 01080 Ciudad de México' ,  558181028, 'CDMX' , 'CDMX', 2)
+Insert into Campus values (4, 'Mexico' , 'Augusto Rodin 498, Insurgentes Mixcoac, Benito Juárez, 03920 Ciudad de México ' ,  5554821600, 'CDMX' , 'CDMX', 3)
+Insert into Campus values (5, 'Guadalajara' , 'Calz Nueva 49, Granja, 45010 Zapopan, Jal.', 3354821600, 'Jalisco' , 'Zapopan', 3)
+Insert into Campus values (6, 'Santa fe' , 'Av Carlos Lazo 100, Santa Fe, La Loma, Álvaro Obregón, 01389 Ciudad de México' ,  558791761 ,'CDMX' , 'CDMX', 4)
+Insert into Campus values (7, 'Guadalajara' , 'Avenida General Ramón Corona 2514 Nuevo México, 45138 Zapopan, Jal.' ,   558791761 , 'Jalisco' , 'Zapopan', 4)
+Insert into Campus values (8, 'Puebla' , 'Del Tecnológico 420, Corredor Industrial la Ciénega, Puebla, Pue.' ,   2228791761 , 'Puebla' , 'Puebla', 4)
+
+--Tuplas Area
+insert into Area values (1, 'Matematicas' ,20,10,12,3)
+insert into Area values (2, 'Matematicas' ,10,30,12,2)
+insert into Area values (3, 'Matematicas' ,7,20,39,1)
+insert into Area values (4, 'Matematicas' ,8,20,11,4)
+insert into Area values (5, 'Ingenierias' ,25,0,17,3)
+insert into Area values (6, 'Ingenierias' ,5,27,51,1)
+insert into Area values (7, 'Ingenierias' ,5,88,51,6)
+insert into Area values (8, 'Ingenierias' ,3,34,43,7)
+insert into Area Values (9, 'finanzas', 29,2,11,3)
+insert into Area Values (10, 'finanzas', 22,22,11,4)
+insert into Area Values (11, 'finanzas', 12,22,11,5)
+insert into Area Values (12, 'finanzas', 17,33,13,7)
+insert into Area Values (13, 'humanidades', 32,33,13,8)
+insert into Area Values (14, 'humanidades', 32,33,13,5)
+
+--Tuplas Carrera
+insert into Carrera values (1,'Lic. en Matemáticas', 80, 10, 1) 
+insert into Carrera values (2,'Lic. en Matemáticas', 76, 9, 2) 
+insert into Carrera values (3,'Lic. en Matemáticas', 80, 9, 3) 
+insert into Carrera values (4,'Lic. en Matemáticas', 70, 8, 4) 
+insert into Carrera values (5,'Ing. en Computación', 80, 8, 5) 
+insert into Carrera values (6,'Ing. en Computación', 80, 8, 6) 
+insert into Carrera values (7,'Ing. en Computación', 60, 6, 7) 
+insert into Carrera values (8,'Ing. en Computación', 90, 9, 8) 
+insert into Carrera values (9,'Ing. en Telemática', 80, 9, 6) 
+insert into Carrera values (10,'Ing. en Telemática', 80, 10, 7) 
+insert into Carrera values (11,'Historia', 80, 8, 14) 
+insert into Carrera values (12,'Historia', 80, 8, 13) 
+insert into Carrera values (13,'Direccion Financiera', 80, 8, 9) 
+insert into Carrera values (14,'Direccion Financiera', 80, 8, 10) 
+insert into Carrera values (15,'Direccion Financiera', 80, 8, 11) 
+insert into Carrera values (16,'Direccion Financiera', 80, 8, 12) 
+
+--Tupla ServCamp
+insert into ServCamp values(1,1)
+insert into ServCamp values(1,2)
+insert into ServCamp values(1,3)
+insert into ServCamp values(1,4)
+insert into ServCamp values(1,5)
+insert into ServCamp values(1,6)
+insert into ServCamp values(1,7)
+insert into ServCamp values(2,3)
+insert into ServCamp values(2,4)
+insert into ServCamp values(2,1)
+insert into ServCamp values(2,8)
+insert into ServCamp values(3,3)
+insert into ServCamp values(3,1)
+insert into ServCamp values(3,7)
+insert into ServCamp values(3,5)
+insert into ServCamp values(4,3)
+insert into ServCamp values(4,1)
+insert into ServCamp values(4,2)
+insert into ServCamp values(4,4)
+insert into ServCamp values(5,1)
+insert into ServCamp values(5,8)
+insert into ServCamp values(5,7)
+insert into ServCamp values(5,3)
+
+--Tupla CampCar
+insert into CampCar values(1,3)
+insert into CampCar values(2,2)
+insert into CampCar values(3,1)
+insert into CampCar values(4,4)
+insert into CampCar values(5,3)
+insert into CampCar values(6,1)
+insert into CampCar values(7,6)
+insert into CampCar values(8,7)
+insert into CampCar values(9,1)
+insert into CampCar values(10,4)
+insert into CampCar values(11,5)
+insert into CampCar values(12,8)
+insert into CampCar values(13,3)
+insert into CampCar values(14,4)
+insert into CampCar values(15,5)
+insert into CampCar values(16,7)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

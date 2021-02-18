@@ -1,0 +1,50 @@
+--BIT 1 = TRUE , 0 = FALSE
+create table Servicio
+	(IdSer	smallint	primary key,
+	fisico	BIT,
+	nombre	char(30),
+	costo	money);
+
+create table Inst
+	(IdIn	smallint	primary key,
+	siglas char(10),
+	nombre char(70));
+	
+create table Campus
+	(IdC	smallint	primary key,
+	nombre	char(60),
+	dom		char(100),
+	tel		bigint,
+	edo		char(30),
+	ciudad	char(30),
+	IdIn	smallint	references Inst not null);
+
+create table Area
+	(IdAr 			smallint	primary key,
+	nombre			char(30),
+	CantidadDoc		smallint,
+	CantidadLic		smallint,
+	CantidadMaes	smallint,
+	IdC				smallint	references Campus not null);
+	
+create table Carrera
+	(IdCar		smallint	primary key,
+	nombre		char(30),
+	creditos	smallint	check (creditos between 50 and 100),
+	duracion	smallint	check (duracion between 5 and 12),
+	IdAr		smallint	references Area not null);
+
+create table ServCamp
+	(IdSer		smallint	references	Servicio,
+	IdC			smallint	references	Campus,
+							primary key(IdSer,Idc));
+							
+create table CampCar
+	(IdCar		smallint	references	Carrera,
+	IdC		smallint	references	Campus,
+							primary key(IdCar,IdC));
+							
+							
+	
+
+	

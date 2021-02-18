@@ -1,0 +1,38 @@
+--a)
+select i.nombre "Institución", c.nombre "Campus", c.ciudad "Ciudad"
+from Inst i, Campus c
+where i.IdIn=c.IdIn and c.ciudad in
+(select distinct ciudad
+from Campus)
+order by c.ciudad
+
+--b)
+select i.nombre
+from Carrera c, Inst i, Campus ca, CampCar camp
+where c.IdCar=camp.IdCar and camp.IdC=ca.IdC and ca.IdIn=i.IdIn and c.nombre='Lic. en Matemáticas'
+intersect
+select i.nombre
+from Carrera c, Inst i, Campus ca, CampCar camp
+where c.IdCar=camp.IdCar and camp.IdC=ca.IdC and ca.IdIn=i.IdIn and c.nombre='Ing. en Computación'
+intersect
+select i.nombre
+from Carrera c, Inst i, Campus ca, CampCar camp
+where c.IdCar=camp.IdCar and camp.IdC=ca.IdC and ca.IdIn=i.IdIn and c.nombre='Ing. en Telemática'
+
+--c)
+select i.nombre, c.nombre, c.ciudad
+from campus c, Inst i
+where c.IdIn=i.IdIn and c.IdC in
+	(select c.Idc
+	from Campus c, Servicio s, ServCamp sc
+	where s.fisico=1 and s.IdSer=sc.IdSer and sc.IdC=c.IdC
+	group by c.IdC
+	having COUNT(s.IdSer)>2)
+
+--d)
+select i.nombre "Institución", COUNT(distinct ca.nombre) "Total de carreras"
+from Inst i, Campus c, Carrera ca, CampCar cc
+where ca.IdCar=cc.IdCar and c.IdC=cc.IdC and c.IdIn=i.IdIn
+group by i.nombre
+having COUNT(distinct ca.nombre)=(select COUNT(distinct c.nombre)
+				from Carrera c)
